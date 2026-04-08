@@ -1,0 +1,77 @@
+:root {
+    --ana-renk: #2563eb;
+    --ana-renk-koyu: #1d4ed8;
+    --arka-plan: #ffffff;
+    --arka-plan-gri: #f3f4f6;
+    --metin: #1f2937;
+    --metin-hafif: #6b7280;
+    --kart-bg: #ffffff;
+    --cerceve: #e5e7eb;
+    --gecis: all 0.3s ease;
+}
+
+.karanlik-tema {
+    --arka-plan: #111827;
+    --arka-plan-gri: #1f2937;
+    --metin: #f9fafb;
+    --metin-hafif: #d1d5db;
+    --kart-bg: #1f2937;
+    --cerceve: #374151;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body { font-family: 'Inter', sans-serif; background-color: var(--arka-plan); color: var(--metin); line-height: 1.6; transition: var(--gecis); overflow-x: hidden; }
+.konteyner { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.bolum { padding: 100px 0; }
+.gri-arka-plan { background-color: var(--arka-plan-gri); }
+.bolum-basligi { text-align: center; font-size: 2.5rem; font-weight: 700; margin-bottom: 60px; }
+
+#ozel-imlec { width: 20px; height: 20px; border: 2px solid var(--ana-renk); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transition: transform 0.1s ease; transform: translate(-50%, -50%); display: none; }
+@media (min-width: 768px) { body { cursor: none; } #ozel-imlec { display: block; } }
+
+.ana-navigasyon { background-color: var(--arka-plan); padding: 20px 0; position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid var(--cerceve); }
+.ana-navigasyon .konteyner { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.5rem; font-weight: 700; }
+.logo span { color: var(--ana-renk); }
+.nav-linkler { list-style: none; display: flex; gap: 30px; }
+.nav-linkler a { text-decoration: none; color: var(--metin); font-weight: 500; transition: var(--gecis); }
+.nav-linkler a:hover { color: var(--ana-renk); }
+
+.tema-btn { background: none; border: none; cursor: pointer; font-size: 1.3rem; color: var(--metin-hafif); }
+.ikon-gunes { display: none; }
+.karanlik-tema .ikon-ay { display: none; }
+.karanlik-tema .ikon-gunes { display: block; color: #fbbf24; }
+
+.hero-bolumu { padding-top: 150px; }
+.grid-yapisi { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+.gorsel-cerceve { width: 350px; height: 350px; border-radius: 50%; overflow: hidden; border: 5px solid var(--cerceve); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+.ana-profil-foto { width: 100%; height: 100%; object-fit: cover; }
+#daktilo-metni { font-size: 3rem; font-weight: 700; margin-bottom: 20px; min-height: 1.2em; }
+
+.btn { padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: var(--gecis); display: inline-block; }
+.btn-ana { background-color: var(--ana-renk); color: #ffffff; }
+.btn-ikincil { background-color: var(--cerceve); color: var(--metin); }
+
+.yetenek-kart { background: var(--kart-bg); padding: 25px; border-radius: 12px; border: 1px solid var(--cerceve); margin-bottom: 20px; }
+.cubuk-konteynir { height: 10px; background-color: var(--cerceve); border-radius: 5px; overflow: hidden; margin-top: 10px; }
+.cubuk { height: 100%; background-color: var(--ana-renk); width: 0; transition: width 1s ease-in-out; }
+
+.proje-kart { background: var(--kart-bg); border-radius: 12px; overflow: hidden; border: 1px solid var(--cerceve); transition: var(--gecis); }
+.proje-resim { width: 100%; height: 200px; object-fit: cover; }
+.proje-icerik { padding: 20px; }
+.etiket { display: inline-block; padding: 4px 12px; background: var(--arka-plan-gri); border-radius: 20px; font-size: 0.75rem; color: var(--ana-renk); margin-top: 10px; }
+
+.ana-footer { padding: 60px 0 30px; border-top: 1px solid var(--cerceve); margin-top: 50px; }
+.footer-icerik { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+.footer-sosyal { display: flex; gap: 20px; font-size: 1.5rem; }
+.sosyal-link { color: var(--metin-hafif); transition: var(--gecis); }
+.sosyal-link:hover { color: var(--ana-renk); }
+
+@media (max-width: 768px) {
+    .grid-yapisi { grid-template-columns: 1fr; text-align: center; }
+    .hero-gorsel { order: -1; }
+    .gorsel-cerceve { width: 250px; height: 250px; margin: 0 auto; }
+    #daktilo-metni { font-size: 2.2rem; }
+    .nav-linkler { display: none; }
+}
