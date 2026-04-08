@@ -9,8 +9,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="ozel-imlec"></div>
-
     <nav class="ana-navigasyon">
         <div class="konteyner">
             <div class="logo">B.<span>BERKAY</span></div>
@@ -21,15 +19,14 @@
                 <li><a href="#iletisim">İletişim</a></li>
             </ul>
             <div class="nav-aksiyon">
-                <button id="tema-degistir" class="tema-btn" aria-label="Tema Değiştir">
-                    <i class="fas fa-moon ikon-ay"></i>
-                    <i class="fas fa-sun ikon-gunes"></i>
+                <button id="tema-degistir" class="tema-btn">
+                    <i class="fas fa-moon"></i>
                 </button>
             </div>
         </div>
     </nav>
 
-    <header id="hakkimda" class="hero-bolumu bolum">
+    <header id="hakkimda" class="hero-bolumu">
         <div class="konteyner grid-yapisi">
             <div class="hero-gorsel">
                 <div class="gorsel-cerceve">
@@ -37,4 +34,25 @@
                 </div>
             </div>
             <div class="hero-metin">
-                <span class="ust-baslik">
+                <h1 id="daktilo-metni"></h1>
+                <p>Modern web teknolojileri ile kullanıcı dostu arayüzler geliştiriyorum.</p>
+                <div class="sosyal-medya">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="projeler" class="bolum">
+        <div class="konteyner">
+            <h2 class="bolum-basligi">Projelerim</h2>
+            <div id="proje-listesi" class="proje-galerisi">
+                <!-- JavaScript burayı dolduracak -->
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
