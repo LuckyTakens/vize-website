@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Berkay Öztürk | Portfolyo</title>
+    <title>Berkay Öztürk | Dijital Portfolyo</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="./style.css">
@@ -14,19 +14,22 @@
             <div class="logo">B.<span>BERKAY</span></div>
             <ul class="nav-linkler">
                 <li><a href="#hakkimda">Hakkımda</a></li>
+                <li><a href="#yetenekler">Yetenekler</a></li>
                 <li><a href="#projeler">Projeler</a></li>
             </ul>
-            <button id="tema-degistir" class="tema-btn">
-                <i class="fas fa-moon"></i>
-            </button>
+            <button id="tema-degistir" class="tema-btn"><i class="fas fa-moon"></i></button>
         </div>
     </nav>
 
     <header id="hakkimda" class="hero-bolumu">
         <div class="konteyner grid-yapisi">
             <div class="hero-metin">
-                <h1 id="daktilo-metni"></h1>
-                <p>Modern web teknolojileri ile kullanıcı dostu arayüzler geliştiriyorum.</p>
+                <h1 id="daktilo-hedef"></h1>
+                <p>Eğitim: Bilgisayar Programcılığı. Kariyer Hedefi: Full-Stack Geliştirici olmak.</p>
+                <div class="iletisim-ikonlar">
+                    <a href="https://github.com/LuckyTakens"><i class="fab fa-github"></i></a>
+                    <a href="mailto:berkay@email.com"><i class="fas fa-envelope"></i></a>
+                </div>
             </div>
             <div class="hero-gorsel">
                 <div class="gorsel-cerceve">
@@ -36,10 +39,28 @@
         </div>
     </header>
 
+    <section id="yetenekler" class="bolum">
+        <div class="konteyner">
+            <h2 class="bolum-basligi">Yetenekler ve Eğitim</h2>
+            <p>Aldığım Dersler: İnternet Programcılığı 1, Veritabanı, Algoritma.</p>
+            <div class="yetenek-alani">
+                <span>HTML/CSS</span>
+                <div class="bar-dis"><div class="bar-ic" style="width: 90%;"></div></div>
+                <span>JavaScript</span>
+                <div class="bar-dis"><div class="bar-ic" style="width: 75%;"></div></div>
+            </div>
+        </div>
+    </section>
+
     <section id="projeler" class="bolum">
         <div class="konteyner">
-            <h2 class="bolum-basligi">Projelerim</h2>
-            <div id="proje-listesi" class="proje-galerisi"></div>
+            <h2 class="bolum-basligi">Proje Galerisi</h2>
+            <div class="filtre-butonlari">
+                <button onclick="projeFiltrele('hepsi')" class="filtre-btn">Hepsi</button>
+                <button onclick="projeFiltrele('Web')" class="filtre-btn">Web</button>
+                <button onclick="projeFiltrele('Mobil')" class="filtre-btn">Mobil</button>
+            </div>
+            <div id="proje-kutusu" class="proje-galerisi"></div>
         </div>
     </section>
 
