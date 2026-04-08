@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berkay Öztürk | Dijital Portfolyo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="ozel-imlec"></div>
+
+    <nav class="ana-navigasyon">
+        <div class="konteyner">
+            <div class="logo">B.<span>BERKAY</span></div>
+            <ul class="nav-linkler">
+                <li><a href="#hakkimda">Hakkımda</a></li>
+                <li><a href="#yetenekler">Yetenekler</a></li>
+                <li><a href="#projeler">Projeler</a></li>
+                <li><a href="#iletisim">İletişim</a></li>
+            </ul>
+            <div class="nav-aksiyon">
+                <button id="tema-degistir" class="tema-btn">
+                    <i class="fas fa-moon ikon-ay"></i>
+                    <i class="fas fa-sun ikon-gunes"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header id="hakkimda" class="hero-bolumu bolum">
+        <div class="konteyner grid-yapisi">
+            <div class="hero-gorsel">
+                <div class="gorsel-cerceve">
+                    <img src="profil.jpg" alt="Berkay Öztürk" class="ana-profil-foto">
+                </div>
+            </div>
+            <div class="hero-metin">
+                <span class="ust-baslik">Geliştirici & Tasarımcı</span>
+                <h1 id="daktilo-metni"></h1>
+                <p class="hero-aciklama">
+                    Gümüşhane Üniversitesi Bilgisayar Programcılığı öğrencisiyim. Modern web teknolojileri ve kullanıcı deneyimi odaklı projeler geliştiriyorum.
+                </p>
+                <div class="hero-butonlar">
+                    <a href="#projeler" class="btn btn-ana">Çalışmalarımı Gör</a>
+                    <a href="#iletisim" class="btn btn-ikincil">İletişime Geç</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="yetenekler" class="bolum">
+        <div class="konteyner">
+            <h2 class="bolum-basligi">Yetenekler & Eğitim</h2>
+            <div class="egitim-detay">
+                <h3>Gümüşhane Üniversitesi</h3>
+                <p>Bilgisayar Programcılığı Bölümü</p>
+            </div>
+            <div class="yetenek-grid">
+                <div class="yetenek-kart">
+                    <div class="kart-ust">
+                        <h3>HTML5</h3>
+                        <span>85%</span>
+                    </div>
+                    <div class="cubuk-konteynir">
+                        <div class="cubuk" data-genislik="85%"></div>
+                    </div>
+                </div>
+                <div class="yetenek-kart">
+                    <div class="kart-ust">
+                        <h3>CSS3 & Tailwind</h3>
+                        <span>75%</span>
+                    </div>
+                    <div class="cubuk-konteynir">
+                        <div class="cubuk" data-genislik="75%"></div>
+                    </div>
+                </div>
+                <div class="yetenek-kart">
+                    <div class="kart-ust">
+                        <h3>JavaScript</h3>
+                        <span>65%</span>
+                    </div>
+                    <div class="cubuk-konteynir">
+                        <div class="cubuk" data-genislik="65%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projeler" class="bolum gri-arka-plan">
+        <div class="konteyner">
+            <div class="ust-kisim">
+                <h2 class="bolum-basligi">Proje Portfolyosu</h2>
+                <div class="filtre-grubu">
+                    <button class="filtre-btn aktif" onclick="projeleriFiltrele('hepsi')">Tümü</button>
+                    <button class="filtre-btn" onclick="projeleriFiltrele('web')">Web</button>
+                    <button class="filtre-btn" onclick="projeleriFiltrele('mobil')">Mobil</button>
+                </div>
+            </div>
+            <div id="proje-listesi" class="proje-galerisi"></div>
+        </div>
+    </section>
+
+    <footer id="iletisim" class="ana-footer">
+        <div class="konteyner">
+            <div class="footer-icerik">
+                <div class="footer-bilgi">
+                    <h3>Bağlantıda Kalalım</h3>
+                    <p>Sorularınız veya iş birliği için bana ulaşabilirsiniz.</p>
+                </div>
+                <div class="footer-sosyal">
+                    <a href="mailto:berkayozturk04@outlook.com" class="sosyal-link"><i class="fas fa-envelope"></i></a>
+                    <a href="https://github.com/ber7ay" target="_blank" class="sosyal-link"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank" class="sosyal-link"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-alt">
+                <p>&copy; 2026 Berkay Öztürk. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
