@@ -6,16 +6,12 @@ const tumProjeler = [
     { id: 5, baslik: "Portfolyo Web Sitesi", kategori: "web", resim: "https://via.placeholder.com/400x200?text=Portfolyo", aciklama: "Kişisel markanızı yansıtan modern portfolyo." }
 ];
 
-// HTML Elemanlarını Seçme (Hata almamak için kontrol ekliyoruz)
 const projeKonteyner = document.getElementById("proje-listesi");
 const temaButonu = document.getElementById("tema-degistir");
-const ozelImlecHtml = document.getElementById("ozel-imlec");
 const daktiloHedefHtml = document.getElementById("daktilo-metni");
-const yetenekCubuklari = document.querySelectorAll(".cubuk");
 
-// Projeleri Listeleme Fonksiyonu
 function projeleriEkranaBas(projeListesi) {
-    if (!projeKonteyner) return; // Eğer HTML'de bu ID yoksa çalışma
+    if (!projeKonteyner) return;
     projeKonteyner.innerHTML = projeListesi.map(proje => `
         <div class="proje-kart">
             <img src="${proje.resim}" alt="${proje.baslik}" class="proje-resim">
@@ -28,21 +24,17 @@ function projeleriEkranaBas(projeListesi) {
     `).join('');
 }
 
-// Filtreleme Fonksiyonu
 function projeleriFiltrele(secilenKategori, event) {
-    const butonlar = document.querySelectorAll(".filtre-btn");
-    butonlar.forEach(btn => btn.classList.remove("aktif"));
+    document.querySelectorAll(".filtre-btn").forEach(btn => btn.classList.remove("aktif"));
     if (event) event.target.classList.add("aktif");
 
     if (secilenKategori === 'hepsi') {
         projeleriEkranaBas(tumProjeler);
     } else {
-        const filtrelenmisProjeler = tumProjeler.filter(proje => proje.kategori === secilenKategori);
-        projeleriEkranaBas(filtrelenmisProjeler);
+        projeleriEkranaBas(tumProjeler.filter(proje => proje.kategori === secilenKategori));
     }
 }
 
-// Tema Değiştirme
 if (temaButonu) {
     temaButonu.addEventListener("click", () => {
         document.body.classList.toggle("karanlik-tema");
@@ -50,15 +42,6 @@ if (temaButonu) {
     });
 }
 
-// Özel İmleç Takibi
-if (ozelImlecHtml) {
-    document.addEventListener("mousemove", (e) => {
-        ozelImlecHtml.style.left = e.clientX + "px";
-        ozelImlecHtml.style.top = e.clientY + "px";
-    });
-}
-
-// Daktilo Efekti
 const daktiloMetni = "Berkay Öztürk";
 let harfIndeksi = 0;
 function daktiloYaz() {
@@ -69,22 +52,6 @@ function daktiloYaz() {
     }
 }
 
-// Yetenek Çubukları Animasyonu
-function yetenekleriGoster() {
-    yetenekCubuklari.forEach(cubuk => {
-        cubuk.style.width = cubuk.getAttribute("data-genislik");
-    });
-}
-
-// Sayfa Kaydırma Takibi (Scroll)
-window.addEventListener("scroll", () => {
-    const yeteneklerBolumu = document.getElementById("yetenekler");
-    if (yeteneklerBolumu && yeteneklerBolumu.getBoundingClientRect().top < window.innerHeight / 1.5) {
-        yetenekleriGoster();
-    }
-});
-
-// Sayfa Yüklendiğinde Çalışacaklar
 window.onload = () => {
     projeleriEkranaBas(tumProjeler);
     daktiloYaz();
