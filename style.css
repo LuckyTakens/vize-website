@@ -49,6 +49,7 @@ function daktiloEfekti() {
     let index = 0;
 
     if (hedef) {
+        hedef.innerHTML = ""; 
         function yaz() {
             if (index < metin.length) {
                 hedef.innerHTML += metin.charAt(index);
@@ -72,4 +73,28 @@ function projeleriGoster(projeler) {
                 <h3>${proje.baslik}</h3>
                 <p>${proje.aciklama}</p>
                 <div class="proje-linkler" style="margin-top: 15px; display: flex; gap: 10px;">
-                    <a href="${proje.github}" class="btn" style="padding: 8px 15px; font-size:
+                    <a href="${proje.github}" class="btn" style="padding: 8px 15px; font-size: 0.8rem; background: #333; color: white; text-decoration: none; border-radius: 5px;">GitHub</a>
+                    <a href="${proje.demo}" class="btn" style="padding: 8px 15px; font-size: 0.8rem; background: #ff8c00; color: white; text-decoration: none; border-radius: 5px;">Demo</a>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+function projeleriFiltrele(kategori) {
+    if (kategori === 'hepsi') {
+        projeleriGoster(tumProjeler);
+    } else {
+        const filtreli = tumProjeler.filter(p => p.kategori === kategori);
+        projeleriGoster(filtreli);
+    }
+}
+
+function temaKontrol() {
+    const temaBtn = document.getElementById('tema-degistir');
+    if (temaBtn) {
+        temaBtn.addEventListener('click', () => {
+            document.body.classList.toggle('karanlik-tema');
+        });
+    }
+}
