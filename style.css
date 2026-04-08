@@ -1,98 +1,75 @@
-:root {
-    --ana-renk: #ff8c00; /* Turuncu */
-    --ana-renk-koyu: #e67e22;
-    --arka-plan: #ffffff;
-    --arka-plan-gri: #f8fafc;
-    --metin: #0f172a;
-    --metin-hafif: #64748b;
-    --kart-bg: #ffffff;
-    --cerceve: #ff8c00; /* Çerçeveler varsayılan turuncu */
-    --gecis: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+const tumProjeler = [
+    {
+        id: 1,
+        baslik: "Üniversite Not Sistemi",
+        kategori: "web",
+        resim: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800&auto=format&fit=crop",
+        aciklama: "Öğrencilerin akademik verilerini takip edebileceği, modern bir yönetim paneli tasarımı.",
+        github: "#",
+        demo: "#"
+    },
+    {
+        id: 2,
+        baslik: "Hava Durumu Uygulaması",
+        kategori: "mobil",
+        resim: "https://images.unsplash.com/photo-1592210454359-9043f067919b?q=80&w=800&auto=format&fit=crop",
+        aciklama: "Anlık konum verilerini kullanarak hava durumunu görselleştiren mobil uygulama arayüzü.",
+        github: "#",
+        demo: "#"
+    },
+    {
+        id: 3,
+        baslik: "E-Ticaret Arayüzü",
+        kategori: "web",
+        resim: "https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=800&auto=format&fit=crop",
+        aciklama: "Kullanıcı deneyimi odaklı, hızlı ve duyarlı bir online alışveriş platformu tasarımı.",
+        github: "#",
+        demo: "#"
+    },
+    {
+        id: 4,
+        baslik: "Görev Yöneticisi (To-Do)",
+        kategori: "web",
+        resim: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=800&auto=format&fit=crop",
+        aciklama: "Günlük görevleri organize eden, JavaScript tabanlı interaktif bir planlama aracı.",
+        github: "#",
+        demo: "#"
+    }
+];
+
+document.addEventListener('DOMContentLoaded', () => {
+    daktiloEfekti();
+    projeleriGoster(tumProjeler);
+    temaKontrol();
+});
+
+function daktiloEfekti() {
+    const metin = "Merhaba, Ben Berkay Öztürk";
+    const hedef = document.getElementById('daktilo-metni');
+    let index = 0;
+
+    if (hedef) {
+        function yaz() {
+            if (index < metin.length) {
+                hedef.innerHTML += metin.charAt(index);
+                index++;
+                setTimeout(yaz, 100);
+            }
+        }
+        yaz();
+    }
 }
 
-.karanlik-tema {
-    --arka-plan: #0f172a;
-    --arka-plan-gri: #1e293b;
-    --metin: #f1f5f9;
-    --metin-hafif: #94a3b8;
-    --kart-bg: #1e293b;
-    --cerceve: #ff8c00; /* Karanlık modda da çerçeve turuncu */
-}
+function projeleriGoster(projeler) {
+    const liste = document.getElementById('proje-listesi');
+    if (!liste) return;
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--arka-plan);
-    color: var(--metin);
-    line-height: 1.6;
-    transition: var(--gecis);
-}
-
-.konteyner {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 0 24px;
-}
-
-.bolum {
-    padding: 100px 0;
-}
-
-.ana-navigasyon {
-    background-color: var(--arka-plan);
-    padding: 20px 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 2px solid var(--ana-renk);
-}
-
-.ana-navigasyon .konteyner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--metin);
-}
-
-.logo span {
-    color: var(--ana-renk);
-}
-
-.nav-linkler {
-    display: flex;
-    list-style: none;
-    gap: 32px;
-}
-
-.nav-linkler a {
-    text-decoration: none;
-    color: var(--metin);
-    font-weight: 600;
-    transition: var(--gecis);
-}
-
-.nav-linkler a:hover {
-    color: var(--ana-renk);
-}
-
-.hero-bolumu {
-    padding-top: 180px;
-}
-
-.grid-yapisi {
-    display
+    liste.innerHTML = projeler.map(proje => `
+        <div class="proje-kart">
+            <img src="${proje.resim}" alt="${proje.baslik}" class="proje-resim">
+            <div class="proje-icerik">
+                <span class="etiket">${proje.kategori}</span>
+                <h3>${proje.baslik}</h3>
+                <p>${proje.aciklama}</p>
+                <div class="proje-linkler" style="margin-top: 15px; display: flex; gap: 10px;">
+                    <a href="${proje.github}" class="btn" style="padding: 8px 15px; font-size:
