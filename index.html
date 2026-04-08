@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Berkay Öztürk | Dijital Portfolyo</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Berkay Öztürk | Portfolyo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <nav class="ana-navigasyon">
@@ -14,31 +14,23 @@
             <div class="logo">B.<span>BERKAY</span></div>
             <ul class="nav-linkler">
                 <li><a href="#hakkimda">Hakkımda</a></li>
-                <li><a href="#yetenekler">Yetenekler</a></li>
                 <li><a href="#projeler">Projeler</a></li>
-                <li><a href="#iletisim">İletişim</a></li>
             </ul>
-            <div class="nav-aksiyon">
-                <button id="tema-degistir" class="tema-btn">
-                    <i class="fas fa-moon"></i>
-                </button>
-            </div>
+            <button id="tema-degistir" class="tema-btn">
+                <i class="fas fa-moon"></i>
+            </button>
         </div>
     </nav>
 
     <header id="hakkimda" class="hero-bolumu">
         <div class="konteyner grid-yapisi">
-            <div class="hero-gorsel">
-                <div class="gorsel-cerceve">
-                    <img src="profil.jpg" alt="Berkay Öztürk" class="ana-profil-foto">
-                </div>
-            </div>
             <div class="hero-metin">
                 <h1 id="daktilo-metni"></h1>
                 <p>Modern web teknolojileri ile kullanıcı dostu arayüzler geliştiriyorum.</p>
-                <div class="sosyal-medya">
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <div class="hero-gorsel">
+                <div class="gorsel-cerceve">
+                    <img src="./profil.jpg" alt="Berkay Öztürk" class="ana-profil-foto">
                 </div>
             </div>
         </div>
@@ -47,12 +39,10 @@
     <section id="projeler" class="bolum">
         <div class="konteyner">
             <h2 class="bolum-basligi">Projelerim</h2>
-            <div id="proje-listesi" class="proje-galerisi">
-                <!-- JavaScript burayı dolduracak -->
-            </div>
+            <div id="proje-listesi" class="proje-galerisi"></div>
         </div>
     </section>
 
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>
